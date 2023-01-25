@@ -62,16 +62,7 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {   
-        animController.SetBool("Jumping", false);
-        
-        if (collision.gameObject.tag == "Player")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                 collision.gameObject.GetComponentInChildren<Health>().pv += 10;
-                 Destroy(gameObject);
-            }
-        }
+        animController.SetBool("Jumping", false);  
         
     }
 

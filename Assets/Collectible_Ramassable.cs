@@ -16,5 +16,14 @@ public class Collectible_Ramassable : MonoBehaviour
         
     }
 
-    
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("BEH");
+        if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+        {
+            collision.gameObject.GetComponentInChildren<Health>().pv += 10;
+            Destroy(gameObject);
+            Debug.Log("BEHHHHHHHHHHHH");
+        }
+    }
 }
